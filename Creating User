@@ -1,0 +1,11 @@
+  Create a user in the role of root and grant him some privileges.
+  1.Cteating a user
+  mysql> insert into mysql.user(Host,User,Password) values("localhost","test",password("1234"));
+  Note:If you want to login from remote location, you need chang the "localhost" to "%".
+  2.Granting priviledge
+  mysql>grant all privileges on DBName.*  to  ‘test’@’localhost’ identified by '1234';
+  mysql>flush privileges;
+  3.look up grant
+  show grants for test@'localhost';
+
+    
